@@ -1,6 +1,6 @@
 {
   "name": "singing-npm-package-first-test",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "npm package first test",
   "type": "module",
   "main": "index.js",
