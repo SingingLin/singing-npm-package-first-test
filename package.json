@@ -1,0 +1,10 @@
+{
+  "name": "singing-npm-package-first-test",
+  "version": "0.0.2",
+  "description": "npm package first test",
+  "type": "module",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
