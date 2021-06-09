@@ -1,6 +1,6 @@
 const randomNumber = (min = 0, max = 100) => {
   // return Math.round((Math.random() * (max - min)) / min);
-  return 'V1.0.1same';
+  return 'V1.0.2';
 };
 
 // console.log(randomNumber(5, 95));
