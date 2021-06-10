@@ -1,8 +1,7 @@
 const randomNumber = (min = 0, max = 100) => {
   // return Math.round((Math.random() * (max - min)) / min);
-  return 'V2.5.0';
+  return `V3.0.0 typescript rollup, random number= 
+  ${Math.round((Math.random() * (max - min)) / min)}`;
 };
-
-// console.log(randomNumber(5, 95));
 
 export default randomNumber;
