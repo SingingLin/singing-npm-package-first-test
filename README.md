@@ -3,9 +3,9 @@
 
 ## use
 ```
-import rng from 'singing-npm-package-first-test';
+import SayHello from 'singing-npm-package-first-test';
 
-rng(5, 10);
+<SayHello />;
 ```
 
 
