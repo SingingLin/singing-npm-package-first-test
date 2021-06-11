@@ -1,6 +1,6 @@
 {
   "name": "singing-npm-package-first-test",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "npm package first test",
   "main": "dist/my-lib-es.js",
   "contributors": [
