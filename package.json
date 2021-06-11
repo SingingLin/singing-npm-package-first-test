@@ -9,8 +9,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rm -rf dist/ && rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist/ && rollup -c"
   },
   "browser": "dist/index.ts",
   "keywords": [
