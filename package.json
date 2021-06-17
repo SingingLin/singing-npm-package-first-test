@@ -1,6 +1,6 @@
 {
   "name": "singing-npm-package-first-test",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "npm package first test",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -27,7 +27,8 @@
     "npm": ">=5"
   },
   "files": [
-    "lib", "umd"
+    "lib",
+    "umd"
   ],
   "repository": {
     "type": "git",
