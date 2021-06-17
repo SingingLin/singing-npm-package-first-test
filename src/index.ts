@@ -13,6 +13,11 @@ const test = (): string => {
 
 console.log(test());
 
+export const testFunc = () => {
+  console.log('testFunc')
+  return 'testFunc';
+}
+
 export { Component } from "./components/Component";
 
 export { Button } from "./components/Button";

@@ -4,6 +4,8 @@
   "description": "npm package first test",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
+  "unpkg": "umd/index.js",
+  "types": "lib/index.d.js",
   "contributors": [
     "Singing Lin <linsinging1234@gmail.com>"
   ],
@@ -14,7 +16,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "browser": "dist/index.ts",
+  "browser": "umd/index.js",
   "keywords": [
     "react",
     "typescript",
@@ -25,7 +27,7 @@
     "npm": ">=5"
   },
   "files": [
-    "lib"
+    "lib", "umd"
   ],
   "repository": {
     "type": "git",

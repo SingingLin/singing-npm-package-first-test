@@ -43,6 +43,16 @@ export default [
     },
     plugins,
   },
+  {
+    input,
+    output: {
+      file: packageJson.unpkg,
+      format: "umd",
+      sourcemap: true,
+      name: "myLib",
+    },
+    plugins,
+  },
 ];
 
 // const nodeResolve = require('@rollup/plugin-node-resolve');
