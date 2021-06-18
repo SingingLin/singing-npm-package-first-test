@@ -1,4 +1,4 @@
-import babel from "rollup-plugin-babel";
+import { babel } from "@rollup/plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 // import { terser } from "rollup-plugin-terser";
 import typescript from "rollup-plugin-typescript2";
@@ -12,11 +12,14 @@ const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const input = "src/index.ts";
 
 const plugins = [
-  // cleaner({
-  //   targets: ["./lib"],
-  // }),
+  cleaner({
+    targets: ["./lib, ./umd"],
+  }),
+  babel({
+    exclude: "node_modules/**",
+  }),
   peerDepsExternal(),
-  resolve(),
+  resolve({ browser: true, extensions }),
   commonjs(),
   typescript({
     typescript: require("typescript"),
@@ -24,36 +27,65 @@ const plugins = [
   }),
 ];
 
-export default [
-  {
-    input,
-    output: {
+export default {
+  input,
+  output: [
+    {
       file: packageJson.module,
       format: "esm",
       sourcemap: true,
     },
-    plugins,
-  },
-  {
-    input,
-    output: {
+    {
       file: packageJson.main,
       format: "cjs",
       sourcemap: true,
     },
-    plugins,
-  },
-  {
-    input,
-    output: {
+    {
       file: packageJson.unpkg,
       format: "umd",
       sourcemap: true,
       name: "myLib",
+      globals: {
+        'react': "React",
+        "react-dom": "ReactDOM",
+        "prop-types": "PropTypes",
+      },
     },
-    plugins,
-  },
-];
+  ],
+  external: ["react", "react-dom", "prop-types"],
+  plugins,
+};
+
+// export default [
+//   {
+//     input,
+//     output: {
+//       file: packageJson.module,
+//       format: "esm",
+//       sourcemap: true,
+//     },
+//     plugins,
+//   },
+//   {
+//     input,
+//     output: {
+//       file: packageJson.main,
+//       format: "cjs",
+//       sourcemap: true,
+//     },
+//     plugins,
+//   },
+//   {
+//     input,
+//     output: {
+//       file: packageJson.unpkg,
+//       format: "umd",
+//       sourcemap: true,
+//       name: "myLib",
+//     },
+//     plugins,
+//   },
+// ];
 
 // const nodeResolve = require('@rollup/plugin-node-resolve');
 // const path = require("path");
