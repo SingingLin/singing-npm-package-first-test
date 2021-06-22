@@ -1,0 +1,8 @@
+# VsCode project files
+.vscode
+
+# react-scaffold folder
+node_modules
+lib
+umd
+tsconfig.json

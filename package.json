@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "unpkg": "umd/index.js",
-  "types": "lib/index.d.js",
+  "typings": "types/index.d.ts",
   "contributors": [
     "Singing Lin <linsinging1234@gmail.com>"
   ],
@@ -13,22 +13,23 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
+    "build:types": "tsc",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "browser": "umd/index.js",
   "keywords": [
     "react",
     "typescript",
     "npm"
   ],
   "engines": {
-    "node": ">=8",
+    "node": ">=10",
     "npm": ">=5"
   },
   "files": [
     "lib",
-    "umd"
+    "umd",
+    "types"
   ],
   "repository": {
     "type": "git",
@@ -44,24 +45,34 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
+    "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-replace": "^2.4.2",
+    "@rollup/plugin-typescript": "^8.2.1",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.2.9",
+    "@types/react": "^17.0.11",
+    "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.2",
+    "node-sass": "^6.0.0",
+    "postcss": "^8.3.5",
     "prettier": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "rollup": "^2.51.1",
-    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-cleaner": "^1.0.0",
-    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dts": "^3.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.3.2"
