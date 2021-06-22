@@ -1,6 +1,6 @@
 {
   "name": "singing-npm-package-first-test",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "npm package first test",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
