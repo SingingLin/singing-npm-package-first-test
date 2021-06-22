@@ -9,6 +9,11 @@ export interface ButtonProps {
   color?: string;
 }
 
+/**
+ * Button
+ * @param children 
+ * @returns 
+ */
 export const Button = ({ children, primary = false, onClick, backgroundColor = '#D1D5DB', color }: ButtonProps): JSX.Element => {
   const buttonStyles = {
     backgroundColor: primary ? '#2563EB' : backgroundColor,
