@@ -5,7 +5,7 @@ type Props = {
   title: string;
 };
 
-export const Component: React.FC<Props> = ({ children, title }) => {
+export const Component = ({ children, title }: Props): JSX.Element => {
   return (
     <div>
       <div>{title}</div>

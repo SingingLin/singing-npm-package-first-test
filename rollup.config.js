@@ -2,10 +2,11 @@ import { DEFAULT_EXTENSIONS } from '@babel/core';
 import { babel } from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import { terser } from "rollup-plugin-terser";
-import dts from 'rollup-plugin-dts';
+// import { terser } from "rollup-plugin-terser";
+// import dts from 'rollup-plugin-dts';
 // import typescript from 'rollup-plugin-typescript2';
 import typescript from '@rollup/plugin-typescript';
+// import eslint from '@rollup/plugin-eslint';
 
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import cleaner from 'rollup-plugin-cleaner';
@@ -18,7 +19,7 @@ import packageJson from './package.json';
 
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx'];
 const input = 'src/index.ts';
-const production = !process.env.ROLLUP_WATCH;
+// const production = !process.env.ROLLUP_WATCH;
 
 const footer = `
 if(typeof window !== 'undefined') {
@@ -26,6 +27,11 @@ if(typeof window !== 'undefined') {
 }`;
 
 const plugins = [
+  // eslint({
+  //   throwOnError: true,
+  //   include: ['src/**'],
+  //   exclude: ['node_modules/**', 'lib/**', 'umd/**', 'types/**']
+  // }),
   cleaner({
     targets: ['./lib, ./umd']
   }),
@@ -51,7 +57,7 @@ const plugins = [
     writeDefinitions: false,
     extract: true
     // minimize: true
-  }),
+  })
   // production && terser()
 ];
 
