@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "unpkg": "umd/index.js",
-  "typings": "types/index.d.ts",
+  "types": "types/index.d.ts",
   "contributors": [
     "Singing Lin <linsinging1234@gmail.com>"
   ],
