@@ -1,5 +1,8 @@
 import * as React from 'react';
-import './button.css';
+// import './button.css';
+import './button.scss';
+import ButtonCss from './moduleStyles/button.module.css';
+import ButtonScss from './moduleStyles/button.module.scss';
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -22,7 +25,7 @@ export const Button = ({ children, primary = false, onClick, backgroundColor = '
 
   return (
     <div className="button-container">
-      <button className="button" type="button" onClick={onClick} style={buttonStyles}>
+      <button className={`button ${ButtonCss.error} ${ButtonScss['error-full']}`} type="button" onClick={onClick} style={buttonStyles}>
         {children}
       </button>
     </div>

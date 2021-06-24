@@ -11,7 +11,6 @@ import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import cleaner from 'rollup-plugin-cleaner';
 
-// Convert CJS modules to ES6, so they can be included in a bundle
 import autoprefixer from 'autoprefixer';
 import postcss from 'rollup-plugin-postcss';
 
@@ -52,10 +51,11 @@ const plugins = [
   // useTsconfigDeclarationDir: true
   // }),
   postcss({
+    // extensions: ['.css', '.scss', '.sass'],
     plugins: [autoprefixer()],
-    // sourceMap: false,
-    writeDefinitions: false,
-    extract: true
+    extract: true,
+    modules: { generateScopedName: '[local]' }
+    // use: ['sass'],
     // minimize: true
   })
   // production && terser()
@@ -85,10 +85,6 @@ export default {
       },
       footer
     }
-    // {
-    //   output: [{ file: 'lib/index.d.ts', format: 'es' }],
-    //   plugins: [dts()]
-    // }
   ],
   // 告訴 rollup 哪些檔案不需要一起被打包
   external: ['react', 'react-dom', 'prop-types', /@babel\/runtime/],

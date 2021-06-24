@@ -1,0 +1,8 @@
+.error {
+  background-color: #f00;
+}
+
+.error-with-color {
+  color: #ff0;
+  composes: error;
+}

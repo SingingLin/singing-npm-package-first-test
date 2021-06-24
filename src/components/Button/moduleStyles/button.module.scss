@@ -1,0 +1,35 @@
+// 定義變數
+// @value white: #fff;
+// @value primary: #33333;
+
+:local(.error-full) {
+  padding: 10px;
+  margin: 10px;
+  // color: primary;
+  // border: 2px solid blue;
+  border-radius: 7px;
+}
+
+:global(.btn) {
+  border: 2px solid #f00;
+}
+
+//scss
+$color-white: #fff;
+$color-pink: #ee11ab;
+$title-font: normal 24px/1.5 "Open Sans", sans-serif;
+
+$primary-color: $color-pink;
+
+a {
+  color: $color-pink;
+  background-color: $color-white;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+.box {
+  @include border-radius(10px);
+}
